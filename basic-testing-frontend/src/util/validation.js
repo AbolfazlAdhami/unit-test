@@ -9,3 +9,9 @@ export function validateNumber(number) {
     throw new Error("Invalid number input.");
   }
 }
+
+export function validatedArrayNumbers(numbers) {
+  if (!numbers || numbers.length === 0) {
+    throw new Error("Not Valid Input.");
+  }
+}

@@ -1,6 +1,6 @@
 import { test, expect, describe, it } from "vitest";
 
-import { generateResultText, outputResult } from "./output";
+import { generateResultText } from "./output";
 
 describe("generateResultText()", () => {
   test("should return a string no matter no value passed a string", () => {
@@ -17,10 +17,9 @@ describe("generateResultText()", () => {
     expect(result3).toBeTypeOf("string");
   });
   it("should passed a string that contain the calculated result if number is provided as result", () => {
-    const result = 3;
+    const result = 0;
     const expectedResult = generateResultText(result);
-
-    expect(expectedResult).toContain(result.toString());
+    expect(expectedResult).toContain(result);
   });
   it("should return an empty string as 'no-calc' is provided as a result ", () => {
     const value = "no-calc";
