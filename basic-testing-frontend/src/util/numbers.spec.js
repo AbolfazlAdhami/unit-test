@@ -27,9 +27,16 @@ it("should yield NaN for non-transformable values", () => {
 
 describe("cleanNumbers()", () => {
   it("should return an array of number values if an array of string number value is provided", () => {
+    // Arrange
     const numberValue = ["1", "2", "3", "4"];
-    const cleanedNumbers = cleanNumbers(numberValue);
-    expect(cleanedNumbers[0]).toBeTypeOf("number");
+    const expectResult = numberValue.map((i) => +i);
+
+    // Act
+    const result = cleanNumbers(numberValue);
+    // Assert
+    expect(result[0]).toBeTypeOf("number");
+    expect(result).toContain(expectResult[1]);
+    expect(result).toEqual(expectResult);
   });
   it("shoould yeild if one of inputes is empty", () => {
     const numberValues = ["", 1];
